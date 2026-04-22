@@ -1,8 +1,84 @@
-# Report Structurer — 麦肯锡风格汇报重构器
+# Report Structurer — McKinsey-Style Report Refactor
+
+[English](#english) · [简体中文](#简体中文)
+
+---
+
+## English
+
+A Claude Skill that rewrites loose, rambling work updates into MECE, McKinsey-consulting-style structured reports.
+
+### Before / After
+
+**Input:**
+
+> Today I went through user feedback from backend versions 3.6–3.8 — both paid and non-paid user feedback, around 150 items total. Some issues still need tech-side confirmation. Feedback mostly centers on subscription-related problems, including entitlements not being applied on time and garbled downloads. All issues have been logged and are being followed up on. Tomorrow: handle the backlog of email-channel feedback.
+
+**Output:**
+
+```
+User Feedback Processing — Daily Report
+
+Completed today:
+1. Consolidated user feedback processing for versions 3.6–3.8: finished full sweep 
+   of both paid and non-paid user feedback, ~150 items total
+2. Located two high-frequency issue clusters:
+   - Subscription entitlements not applied: some users' entitlements did not 
+     activate after payment
+   - Garbled downloads: file export function failing
+3. All issues logged and synced with the tech team for follow-up
+
+Pending:
+1. A small number of items still awaiting tech-side confirmation
+
+Tomorrow's plan:
+1. Process the email-channel feedback backlog
+
+⚠️ Suggested addition: exact count and ETA for the pending items
+```
+
+### Use cases
+
+- Daily / weekly / monthly reports
+- Meeting minutes
+- Product feature updates
+- Strategy summaries
+- Any long block of loose text that needs structure
+
+### Core features
+
+- **MECE classification** — automatically groups information into mutually exclusive, collectively exhaustive buckets
+- **Structured output** — numbered headings + indented bullets, scannable at a glance
+- **Plain-text format** — paste directly into Feishu, DingTalk, or WeChat without formatting loss
+- **Scenario-adaptive** — auto-matches the right template (daily / weekly / monthly / meeting minutes) based on content signals
+- **Gap flagging** — identifies logical gaps and suggests what info to add
+
+### Installation
+
+1. Download `report-structurer.skill` from [Releases](https://github.com/LZHOU317/report-structurer/releases).
+2. Upload it in a Claude conversation — it installs automatically.
+
+Or install manually by placing `report-structurer/SKILL.md` into your Claude Skills directory.
+
+### Usage
+
+Once installed, just paste a block of loose report text to Claude and the skill triggers automatically. You can also say:
+
+- "Structure this report for me"
+- "Clean up the logic"
+- "Turn this into a weekly report"
+
+### License
+
+MIT — see [LICENSE](./LICENSE).
+
+---
+
+## 简体中文
 
 将松散、逻辑感弱的汇报文字重构为 MECE、麦肯锡咨询风格的结构化汇报。
 
-## 效果展示
+### 效果展示
 
 **输入：**
 
@@ -29,7 +105,7 @@
 ⚠️ 建议补充：待技术确认的问题具体数量和预计解决时间
 ```
 
-## 适用场景
+### 适用场景
 
 - 日报 / 周报 / 月报
 - 会议纪要
@@ -37,7 +113,7 @@
 - 策略梳理
 - 任意长段文字的逻辑整理
 
-## 核心特性
+### 核心特性
 
 - **MECE 分类**：自动按互不重叠的维度归类信息点
 - **结构化输出**：数字编号 + 缩进 bullet，一目了然
@@ -45,22 +121,23 @@
 - **场景自适配**：根据内容特征自动匹配日报/周报/月报/会议纪要等模板
 - **信息补全提示**：自动识别逻辑断层，提示建议补充的信息
 
-## 安装方式
+### 安装方式
 
-1. 下载 `report-structurer.skill` 文件（见 [Releases](../../releases)）
+1. 下载 `report-structurer.skill` 文件（见 [Releases](https://github.com/LZHOU317/report-structurer/releases)）
 2. 在 Claude 对话中上传该文件即可自动安装
 
 或者手动安装：将 `report-structurer/SKILL.md` 放入你的 Claude Skills 目录。
 
-## 使用方式
+### 使用方式
 
-安装后，直接粘贴一段汇报文字给 Claude（或者其他Agent），Skill 会自动触发。你也可以说：
+安装后，直接粘贴一段汇报文字给 Claude，Skill 会自动触发。你也可以说：
 
 - "帮我整理一下这段汇报"
 - "结构化一下"
 - "理一下逻辑"
 - "帮我写个周报"
 
-## License
+### License
 
-MIT
+MIT — 见 [LICENSE](./LICENSE)。
+
